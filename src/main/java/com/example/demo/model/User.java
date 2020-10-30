@@ -14,18 +14,19 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class User {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = IDENTITY)
+    private Long userId;
     @NotBlank(message = "Type username")
     private String username;
     @NotBlank(message = "Type password")

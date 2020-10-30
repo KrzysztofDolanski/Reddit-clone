@@ -9,18 +9,17 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
 
+@Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
-@Entity
 public class Comment {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotEmpty(message = "write comment text")
+    @NotEmpty
     private String text;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "postId", referencedColumnName = "postId")
