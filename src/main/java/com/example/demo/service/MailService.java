@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.exeptions.RedditExeption;
+import com.example.demo.exeptions.RedditException;
 import com.example.demo.model.NotificationEmail;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ public class MailService {
             log.info("activation Mail sent");
         }catch (MailException e){
             log.error("Exeption occurred when sending mail", e);
-            throw new RedditExeption("Exeption occurred when sending email to" +notificationEmail.getRecipient());
+            throw new RedditException("Exeption occurred when sending email to" +notificationEmail.getRecipient());
         }
     }
 
