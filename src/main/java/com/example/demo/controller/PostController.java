@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.PostService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
