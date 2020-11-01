@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.AuthenticationResponse;
+import com.example.demo.dto.LoginRequest;
+import com.example.demo.dto.RefreshTokenRequest;
 import com.example.demo.dto.RegisterRequest;
 import com.example.demo.exeptions.RedditException;
 import com.example.demo.model.NotificationEmail;
@@ -10,6 +13,7 @@ import com.example.demo.repository.VerificationTokenRepository;
 import com.example.demo.security.JwtProvider;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

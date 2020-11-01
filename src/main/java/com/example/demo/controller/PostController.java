@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.PostRequest;
+import com.example.demo.dto.PostResponse;
 import com.example.demo.service.PostService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,7 +24,7 @@ public class PostController {
     }
 
     @GetMapping("/{id}")
-    public List<PostResponse> getPost(@PathVariable Long id){
+    public PostResponse getPost(@PathVariable Long id){
         return postService.getPost(id);
     }
 

@@ -1,6 +1,7 @@
 package com.example.demo.mapper;
 
 import com.example.demo.dto.PostRequest;
+import com.example.demo.dto.PostResponse;
 import com.example.demo.model.Post;
 import com.example.demo.model.Subreddit;
 import com.example.demo.model.User;
@@ -11,7 +12,7 @@ import org.mapstruct.Mapping;
 public interface PostMapper {
 
     @Mapping(target = "createdDate", expression = "java(java.time.Instant.now())")
-    @Mapping(target = "decsription", source = "postRequest.description")
+    @Mapping(target = "description", source = "postRequest.description")
     Post map(PostRequest postRequest, Subreddit subreddit, User user);
 
 
