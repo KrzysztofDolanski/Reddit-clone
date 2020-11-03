@@ -28,7 +28,7 @@ public class User {
     @GeneratedValue(strategy = IDENTITY)
     private Long userId;
     @NotBlank(message = "Type username")
-    private String username;
+    private String userName;
     @NotBlank(message = "Type password")
     private String password;
     @Email

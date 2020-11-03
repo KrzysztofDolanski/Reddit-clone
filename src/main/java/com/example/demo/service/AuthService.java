@@ -42,7 +42,7 @@ public class AuthService {
 
     public void signup(RegisterRequest registerRequest) {
         User user = new User();
-        user.setUsername(registerRequest.getUsername());
+        user.setUserName(registerRequest.getUsername());
         user.setEmail(registerRequest.getEmail());
         user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
         user.setCreated(Instant.now());
@@ -66,7 +66,7 @@ public class AuthService {
     }
 
     private void fetchUserAndEnable(VerificationToken verificationToken) {
-        String username = verificationToken.getUser().getUsername();
+        String username = verificationToken.getUser().getUserName();
         User user = userRepository.findByUsername(username).orElseThrow(() -> new RedditException("User not found with name - " + username));
         user.setEnabled(true);
         userRepository.save(user);
