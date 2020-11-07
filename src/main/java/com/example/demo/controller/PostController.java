@@ -39,7 +39,7 @@ public class PostController {
     }
 
     @GetMapping("by-user/{name}")
-    public List<PostResponse> getPostsByUsername(String username){
-        return postService.getPostsByUsername(username);
+    public List<PostResponse> getPostsByUsername(@PathVariable String name){
+        return postService.getPostsByUsername(name);
     }
 }
