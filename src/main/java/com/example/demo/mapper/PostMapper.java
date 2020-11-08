@@ -37,11 +37,12 @@ public abstract class PostMapper {
     public abstract Post map(PostRequest postRequest, Subreddit subreddit, User user);
 
     @Mapping(target = "id", source = "postId")
-
     @Mapping(target = "subredditName", source = "subreddit.name")
     @Mapping(target = "userName", source = "user.userName")
     @Mapping(target = "commentCount", expression = "java(commentCount(post))")
     @Mapping(target = "duration", expression = "java(getDuration(post))")
+    @Mapping(target = "upVote", expression = "java(isPostUpVoted(post))")
+    @Mapping(target = "downVote", expression = "java(isPostDownVoted(post))")
     public abstract PostResponse mapToDo(Post post);
 
 

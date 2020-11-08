@@ -9,10 +9,12 @@ import com.example.demo.model.VoteType;
 import com.example.demo.repository.PostRepository;
 import com.example.demo.repository.VoteRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-
+@Service
 @AllArgsConstructor
 public class VoteService {
 
@@ -21,6 +23,7 @@ public class VoteService {
     private final PostRepository postRepository;
     private final AuthService authService;
 
+    @Transactional
     public void vote(VoteDto voteDto) {
         Post post = postRepository.findById(voteDto.getPostId())
                 .orElseThrow(() -> new PostNotFoundException("Post Not found with id " + voteDto.getPostId()));

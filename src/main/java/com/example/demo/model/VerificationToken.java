@@ -15,7 +15,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tokens")
+@Table(name = "token")
 public class VerificationToken {
 
     @Id
